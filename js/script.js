@@ -68,3 +68,57 @@ document.querySelectorAll(".navbar ul a").forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+
+// LIGHTBOX
+
+const portfolioImages = document.querySelectorAll(".portfolio-card img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+portfolioImages.forEach(img => {
+    img.addEventListener("click", (e) => {
+        e.preventDefault();
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+lightboxClose.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+    if(e.target === lightbox){
+        lightbox.style.display = "none";
+    }
+});
+
+const aboutImage = document.querySelector(".about-image img");
+
+if(aboutImage){
+    aboutImage.addEventListener("click", (e) => {
+        e.preventDefault();
+        lightbox.style.display = "flex";
+        lightboxImg.src = aboutImage.src;
+    });
+}
+
+// MENU SCROLL FIX
+document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+
+        if(targetSection){
+            targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+        navMenu.classList.remove("active");
+    });
+});
