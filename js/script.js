@@ -5,9 +5,9 @@ const nextBtn = document.querySelector(".slider-btn.next");
 const dots = document.querySelectorAll(".dot");
 
 let currentIndex = 0;
-const showCount = 3;
-
+let showCount = window.innerWidth <= 768 ? 1 : 3;
 function updateSlider(){
+    showCount = window.innerWidth <= 768 ? 1 : 3;
     const cardWidth = cards[0].offsetWidth + 30;
     track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 
@@ -21,8 +21,9 @@ function updateSlider(){
 }
 
 nextBtn.addEventListener("click", () => {
+
     if(currentIndex < cards.length - showCount){
-        currentIndex += showCount;
+        currentIndex++;
     }else{
         currentIndex = 0;
     }
@@ -31,8 +32,9 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
+
     if(currentIndex > 0){
-        currentIndex -= showCount;
+        currentIndex--;
     }else{
         currentIndex = cards.length - showCount;
     }

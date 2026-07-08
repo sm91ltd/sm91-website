@@ -6,9 +6,7 @@
     <title>ขอใบเสนอราคา | SM91 จำกัด</title>
 
     <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -19,35 +17,57 @@
         <p>กรอกข้อมูลของคุณ แล้วทีมงาน SM91 จะติดต่อกลับโดยเร็วที่สุด</p>
 
         <form action="https://formsubmit.co/sm91niti@gmail.com" method="POST">
-            <input type="text" name="ชื่อผู้ติดต่อ" placeholder="ชื่อผู้ติดต่อ" required>
 
-            <input type="text" name="ชื่อบริษัท/โครงการ" placeholder="ชื่อบริษัท / ชื่อโครงการ">
+            <label>ชื่อผู้ติดต่อ <span class="red-star">*</span></label>
+            <input type="text" name="ชื่อผู้ติดต่อ" placeholder="กรอกชื่อผู้ติดต่อ" required>
 
-            <input type="tel" name="เบอร์โทร" placeholder="เบอร์โทร" required>
+            <label>ชื่อบริษัท / ชื่อโครงการ <span class="red-star">*</span></label>
+            <input type="text" name="ชื่อบริษัท/โครงการ" placeholder="กรอกชื่อบริษัท / ชื่อโครงการ" required>
 
-            <input type="email" name="อีเมล" placeholder="อีเมล">
+            <label>เบอร์โทร <span class="red-star">*</span></label>
+            <input
+    type="tel"
+    name="เบอร์โทร"
+    placeholder="กรอกเบอร์โทร"
+    pattern="[0-9]{9,10}"
+    maxlength="10"
+    inputmode="numeric"
+    title="กรุณากรอกเบอร์โทร 9-10 หลัก โดยใช้ตัวเลขเท่านั้น"
+    required>
 
+            <label>อีเมล <span class="red-star">*</span></label>
+            <input
+    type="email"
+    name="อีเมล"
+    placeholder="กรอกอีเมล"
+    autocomplete="email"
+    title="กรุณากรอกอีเมลให้ถูกต้อง เช่น example@email.com"
+    required>
+
+            <label>ประเภทบริการ <span class="red-star">*</span></label>
             <select name="ประเภทบริการ" required>
-                <option value="">เลือกประเภทบริการ</option>
+                <option value="" selected disabled>เลือกประเภทบริการ</option>
+                <option value="งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค">งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค</option>
                 <option value="งานบริหารนิติบุคคล">งานบริหารนิติบุคคล</option>
-                <option value="งานช่างซ่อมบำรุง">งานช่างซ่อมบำรุง</option>
-                <option value="งานดูแลอาคาร">งานดูแลอาคาร</option>
+                <option value="งานจดจัดตั้งนิติบุคคล">งานจดจัดตั้งนิติบุคคล</option>
+                <option value="งานจัดประชุมใหญ่">งานจัดประชุมใหญ่</option>
+                <option value="ล้างเครื่องปรับอากาศ">ล้างเครื่องปรับอากาศ</option>
                 <option value="อื่น ๆ">อื่น ๆ</option>
             </select>
 
-            <textarea name="รายละเอียด" placeholder="รายละเอียดเพิ่มเติม" rows="6"></textarea>
+            <label>รายละเอียดเพิ่มเติม</label>
+            <textarea name="รายละเอียด" placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)" rows="6"></textarea>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="มีลูกค้าขอใบเสนอราคาใหม่จากเว็บไซต์ SM91">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="thankyou.html">
 
             <button type="submit">
                 <i class="fa-solid fa-paper-plane"></i>
                 ส่งคำขอใบเสนอราคา
             </button>
-<input type="hidden" name="_captcha" value="false">
 
-<input type="hidden" name="_subject" value="มีลูกค้าขอใบเสนอราคาใหม่จากเว็บไซต์ SM91">
-
-<input type="hidden" name="_template" value="table">
-
-<input type="hidden" name="_next" value="thankyou.html">
         </form>
 
         <a href="index.html" class="back-home">กลับหน้าแรก</a>
