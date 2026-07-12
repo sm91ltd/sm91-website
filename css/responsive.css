@@ -1,0 +1,274 @@
+/* ==============================
+   รองรับหน้าจอแท็บเล็ตและมือถือ
+============================== */
+
+@media (max-width: 992px) {
+
+    header,
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 130px 5% 70px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .services,
+    .about,
+    .projects,
+    .news,
+    .contact,
+    .quote-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .service-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        gap: 35px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+    }
+}
+
+
+/* ==============================
+   รองรับหน้าจอมือถือ
+============================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header,
+    .navbar {
+        height: auto;
+        min-height: 75px;
+    }
+
+    .navbar {
+        padding: 12px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 12px;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+}
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .hero {
+        padding: 150px 20px 60px;
+        text-align: center;
+        background-position: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.35;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .services,
+    .about,
+    .projects,
+    .news,
+    .contact,
+    .quote-section {
+        padding: 60px 20px;
+    }
+
+    .services h2,
+    .about h2,
+    .projects h2,
+    .news h2,
+    .contact h2,
+    .quote-section h2 {
+        font-size: 30px;
+        line-height: 1.35;
+    }
+
+    .service-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-slider,
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .project-card,
+    .slide {
+        min-width: 100%;
+    }
+
+    .slider-btn,
+    .prev,
+    .next {
+        width: 42px;
+        height: 42px;
+    }
+
+    .news-container,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-map {
+        width: 100%;
+    }
+
+    .contact-map iframe {
+        width: 100%;
+        min-height: 320px;
+    }
+
+    .quote-form-box {
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+    .quote-form-box input,
+    .quote-form-box select,
+    .quote-form-box textarea,
+    .quote-form-box button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    footer {
+        padding: 35px 20px;
+        text-align: center;
+    }
+}
+
+
+/* ==============================
+   รองรับมือถือหน้าจอเล็ก
+============================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-top: 165px;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .services h2,
+    .about h2,
+    .projects h2,
+    .news h2,
+    .contact h2,
+    .quote-section h2 {
+        font-size: 26px;
+    }
+
+    .card h3 {
+        font-size: 21px;
+    }
+
+    .quote-form-box {
+        padding: 22px 15px;
+    }
+}
