@@ -124,3 +124,108 @@ document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+
+// ป๊อปอัปวันเฉลิมพระชนมพรรษา
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("royalPopup");
+    const closeButton = document.getElementById("royalPopupClose");
+
+    if (!popup || !closeButton) {
+        return;
+    }
+
+    const now = new Date();
+
+    const isRoyalBirthday =
+        now.getFullYear() === 2026 &&
+        now.getMonth() === 6 &&
+        now.getDate() === 28;
+
+    if (isRoyalBirthday) {
+        popup.classList.add("show");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeRoyalPopup() {
+        popup.classList.remove("show");
+        document.body.style.overflow = "";
+    }
+
+    closeButton.addEventListener("click", closeRoyalPopup);
+
+    popup.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            closeRoyalPopup();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeRoyalPopup();
+        }
+    });
+});
+
+// ==========================
+// NEWS SLIDER
+// ==========================
+
+const newsTrack = document.querySelector(".news-slider .news-box");
+const newsCards = document.querySelectorAll(".news-slider .news-card");
+const newsPrev = document.querySelector(".news-prev");
+const newsNext = document.querySelector(".news-next");
+
+if(newsTrack && newsCards.length){
+
+    let newsIndex = 0;
+
+    function newsShowCount(){
+        if(window.innerWidth <= 600) return 1;
+        if(window.innerWidth <= 992) return 2;
+        return 3;
+    }
+
+    function updateNewsSlider(){
+
+        const cardWidth = newsCards[0].offsetWidth + 30;
+        const max = newsCards.length - newsShowCount();
+
+        newsTrack.style.transform =
+        `translateX(-${newsIndex * cardWidth}px)`;
+
+        newsPrev.style.display = "block";
+newsNext.style.display = "block";
+    }
+
+   newsNext.addEventListener("click", () => {
+
+    const max = newsCards.length - newsShowCount();
+
+    if (newsIndex < max) {
+        newsIndex++;
+    } else {
+        newsIndex = 0;
+    }
+
+    updateNewsSlider();
+
+});
+
+newsPrev.addEventListener("click", () => {
+
+    const max = newsCards.length - newsShowCount();
+
+    if (newsIndex > 0) {
+        newsIndex--;
+    } else {
+        newsIndex = max;
+    }
+
+    updateNewsSlider();
+
+});
+
+    window.addEventListener("resize",updateNewsSlider);
+
+    updateNewsSlider();
+}
