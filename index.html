@@ -264,7 +264,36 @@ SM 91 จำกัด
         <p>ติดตามข่าวสารและความเคลื่อนไหวล่าสุดจาก บริษัท เอสเอ็ม 91 จำกัด</p>
     </div>
 
-    <div class="news-box">
+    <div class="news-slider">
+
+    <button class="news-slider-btn news-prev">&#10094;</button>
+
+    <div class="news-slider-window">
+        <div class="news-box">
+        <div class="news-card">
+    <img
+        src="images/king-birthday-2026.jpg"
+        alt="วันเฉลิมพระชนมพรรษา 28 กรกฎาคม 2569"
+        class="royal-news-image"
+    >
+
+    <div class="news-content">
+        <span class="news-date">28 กรกฎาคม 2569</span>
+
+        <h3>
+            ร่วมน้อมเกล้าน้อมกระหม่อมถวายพระพรชัยมงคล
+        </h3>
+
+        <p>
+            บริษัท เอสเอ็ม 91 จำกัด ร่วมน้อมเกล้าน้อมกระหม่อม
+            ถวายพระพรชัยมงคล เนื่องในโอกาสวันเฉลิมพระชนมพรรษา
+        </p>
+
+        <a href="news-king-birthday-2026.html" class="news-btn">
+            อ่านเพิ่มเติม
+        </a>
+    </div>
+</div>
 
         <div class="news-card">
             <img src="images/news1.jpg" alt="บริหารนิติบุคคล">
@@ -308,9 +337,15 @@ SM 91 จำกัด
             </div>
         </div>
 
+         </div>
     </div>
 
+    <button class="news-slider-btn news-next">&#10095;</button>
+
+</div>
+
 </section>
+
 <section class="contact" id="contact">
     <div class="section-title">
         <span>ติดต่อเรา</span>
@@ -438,8 +473,45 @@ referrerpolicy="strict-origin-when-cross-origin">
     <span class="lightbox-close">&times;</span>
     <img src="" id="lightbox-img">
 </div>
-<script src="js/script.js"></script>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="" id="lightbox-img">
+</div>
 
+<!-- เพิ่มป๊อปอัปตรงนี้ -->
+<div class="royal-popup" id="royalPopup">
+    <div class="royal-popup-box">
+
+        <button class="royal-popup-close" id="royalPopupClose">
+            &times;
+        </button>
+
+        <img src="images/king-birthday-2026.jpg"
+             alt="วันเฉลิมพระชนมพรรษา 28 กรกฎาคม 2569">
+
+        <h2>ทรงพระเจริญ</h2>
+
+        <p>
+            เนื่องในโอกาสวันเฉลิมพระชนมพรรษา<br>
+            พระบาทสมเด็จพระวชิรเกล้าเจ้าอยู่หัว<br>
+            28 กรกฎาคม 2569
+        </p>
+
+        <p class="royal-popup-company">
+            ด้วยเกล้าด้วยกระหม่อม<br>
+            ข้าพระพุทธเจ้า คณะผู้บริหารและพนักงาน<br>
+            บริษัท เอสเอ็ม 91 จำกัด
+        </p>
+
+        <a href="news-king-birthday-2026.html"
+           class="royal-popup-btn">
+            อ่านรายละเอียด
+        </a>
+
+    </div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
