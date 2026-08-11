@@ -1601,3 +1601,27 @@ background:#fff;
 .news-next{
     right:-60px;
 }
+
+/* ==========================
+   รูปวันแม่ - หน้าแรกเท่านั้น
+   ========================== */
+
+/* วันแม่ - หน้าแรก */
+.news-card img.mothers-news-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: initial !important;
+    object-position: initial !important;
+    display: block !important;
+}
+
+/* รูปวันแม่บนหน้าแรกเท่านั้น */
+.news-card a[href="news-mothers-day-2026.html"] img {
+    width: 100% !important;
+    height: 360px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #fff !important;
+    display: block !important;
+}
