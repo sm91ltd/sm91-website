@@ -96,75 +96,101 @@ lightbox.addEventListener("click", (e) => {
     }
 });
 
-const aboutImage = document.querySelector(".about-image img");
+// ==========================
+// POPUP ประกาศวันที่ 28 กรกฎาคม และ 12 สิงหาคม
+// ==========================
 
-if(aboutImage){
-    aboutImage.addEventListener("click", (e) => {
-        e.preventDefault();
-        lightbox.style.display = "flex";
-        lightboxImg.src = aboutImage.src;
+const now = new Date();
+
+// ---------- ประกาศวันที่ 12 สิงหาคม ----------
+const mothersDayPopup = document.getElementById("mothersDayPopup");
+const mothersDayPopupClose = document.getElementById("mothersDayPopupClose");
+
+const isMothersDay =
+    now.getFullYear() === 2026 &&
+    now.getMonth() === 7 &&
+    now.getDate() === 12;
+
+if (isMothersDay && mothersDayPopup) {
+    mothersDayPopup.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMotherPopup() {
+    if (mothersDayPopup) {
+        mothersDayPopup.classList.remove("show");
+    }
+
+    document.body.style.overflow = "";
+}
+
+if (mothersDayPopupClose) {
+    mothersDayPopupClose.addEventListener("click", closeMotherPopup);
+}
+
+if (mothersDayPopup) {
+    mothersDayPopup.addEventListener("click", function (event) {
+        if (event.target === mothersDayPopup) {
+            closeMotherPopup();
+        }
     });
 }
 
-// MENU SCROLL FIX
-document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e){
-        e.preventDefault();
 
-        const targetId = this.getAttribute("href");
-        const targetSection = document.querySelector(targetId);
+// ---------- ประกาศวันที่ 28 กรกฎาคม ----------
+const royalPopup = document.getElementById("royalPopup");
+const royalPopupClose = document.getElementById("royalPopupClose");
 
-        if(targetSection){
-            targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
+const isRoyalBirthday =
+    now.getFullYear() === 2026 &&
+    now.getMonth() === 6 &&
+    now.getDate() === 28;
 
-        navMenu.classList.remove("active");
-    });
-});
+if (isRoyalBirthday && royalPopup) {
+    royalPopup.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
 
-// ป๊อปอัปวันเฉลิมพระชนมพรรษา
-document.addEventListener("DOMContentLoaded", function () {
-    const popup = document.getElementById("royalPopup");
-    const closeButton = document.getElementById("royalPopupClose");
-
-    if (!popup || !closeButton) {
-        return;
+function closeRoyalPopup() {
+    if (royalPopup) {
+        royalPopup.classList.remove("show");
     }
 
-    const now = new Date();
+    document.body.style.overflow = "";
+}
 
-    const isRoyalBirthday =
-        now.getFullYear() === 2026 &&
-        now.getMonth() === 6 &&
-        now.getDate() === 28;
+if (royalPopupClose) {
+    royalPopupClose.addEventListener("click", closeRoyalPopup);
+}
 
-    if (isRoyalBirthday) {
-        popup.classList.add("show");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeRoyalPopup() {
-        popup.classList.remove("show");
-        document.body.style.overflow = "";
-    }
-
-    closeButton.addEventListener("click", closeRoyalPopup);
-
-    popup.addEventListener("click", function (event) {
-        if (event.target === popup) {
+if (royalPopup) {
+    royalPopup.addEventListener("click", function (event) {
+        if (event.target === royalPopup) {
             closeRoyalPopup();
         }
     });
+}
+
+
+// ---------- ปุ่ม ESC สำหรับปิดประกาศ ----------
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeMotherPopup();
+        closeRoyalPopup();
+    }
+});
+
+
+// ==========================
+// NEWS SLIDER
+// ==========================
+
 
     document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
             closeRoyalPopup();
         }
     });
-});
 
 // ==========================
 // NEWS SLIDER
