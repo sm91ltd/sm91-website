@@ -13,66 +13,809 @@
 
 <section class="quote-page">
     <div class="quote-form-box">
+
         <h1>ขอใบเสนอราคา</h1>
-        <p>กรอกข้อมูลของคุณ แล้วทีมงาน SM91 จะติดต่อกลับโดยเร็วที่สุด</p>
+
+        <p>
+            กรอกข้อมูลของคุณ แล้วทีมงาน SM91 จะติดต่อกลับโดยเร็วที่สุด
+        </p>
 
         <form action="https://formsubmit.co/sm91ni@gmail.com" method="POST">
 
-            <label>ชื่อผู้ติดต่อ <span class="red-star">*</span></label>
-            <input type="text" name="ชื่อผู้ติดต่อ" placeholder="กรอกชื่อผู้ติดต่อ" required>
+            <!-- 1. ชื่อผู้ติดต่อ -->
+            <label>
+                ชื่อผู้ติดต่อ <span class="red-star">*</span>
+            </label>
 
-            <label>ชื่อบริษัท / ชื่อโครงการ <span class="red-star">*</span></label>
-            <input type="text" name="ชื่อบริษัท/โครงการ" placeholder="กรอกชื่อบริษัท / ชื่อโครงการ" required>
-
-            <label>เบอร์โทร <span class="red-star">*</span></label>
             <input
-    type="tel"
-    name="เบอร์โทร"
-    placeholder="กรอกเบอร์โทร"
-    pattern="[0-9]{9,10}"
-    maxlength="10"
-    inputmode="numeric"
-    title="กรุณากรอกเบอร์โทร 9-10 หลัก โดยใช้ตัวเลขเท่านั้น"
-    required>
+                type="text"
+                name="ชื่อผู้ติดต่อ"
+                placeholder="กรอกชื่อผู้ติดต่อ"
+                required
+            >
 
-            <label>อีเมล <span class="red-star">*</span></label>
-            <input
-    type="email"
-    name="อีเมล"
-    placeholder="กรอกอีเมล"
-    autocomplete="email"
-    title="กรุณากรอกอีเมลให้ถูกต้อง เช่น example@email.com"
-    required>
 
-            <label>ประเภทบริการ <span class="red-star">*</span></label>
-            <select name="ประเภทบริการ" required>
-                <option value="" selected disabled>เลือกประเภทบริการ</option>
-                <option value="งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค">งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค</option>
-                <option value="งานบริหารนิติบุคคล">งานบริหารนิติบุคคล</option>
-                <option value="งานจดจัดตั้งนิติบุคคล">งานจดจัดตั้งนิติบุคคล</option>
-                <option value="งานจัดประชุมใหญ่">งานจัดประชุมใหญ่</option>
-                <option value="ล้างเครื่องปรับอากาศ">ล้างเครื่องปรับอากาศ</option>
-                <option value="อื่น ๆ">อื่น ๆ</option>
+            <!-- 2. ประเภทบริการ -->
+            <label>
+                ประเภทบริการ <span class="red-star">*</span>
+            </label>
+
+            <select name="ประเภทบริการ" id="serviceType" required>
+
+                <option value="" selected disabled>
+                    เลือกประเภทบริการ
+                </option>
+
+                <option value="งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค">
+                    งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค
+                </option>
+
+                <option value="งานบริหารนิติบุคคล">
+                    งานบริหารนิติบุคคล
+                </option>
+
+                <option value="งานจดจัดตั้งนิติบุคคล">
+                    งานจดจัดตั้งนิติบุคคล
+                </option>
+
+                <option value="งานจัดประชุมใหญ่">
+                    งานจัดประชุมใหญ่
+                </option>
+
+                <option value="ล้างเครื่องปรับอากาศ">
+                    ล้างเครื่องปรับอากาศ
+                </option>
+
+                <option value="งานกล้อง CCTV">
+    งานกล้อง CCTV
+</option>
+
+                <option value="อื่น ๆ">
+                    อื่น ๆ
+                </option>
+
             </select>
+            <!-- รายละเอียดสำหรับบริการอื่น ๆ -->
+<div id="otherServiceFields" style="display: none;">
 
-            <label>รายละเอียดเพิ่มเติม</label>
-            <textarea name="รายละเอียด" placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)" rows="6"></textarea>
+    <label>
+        รายละเอียดงาน <span class="red-star">*</span>
+    </label>
 
+    <textarea
+        name="รายละเอียดงานอื่น ๆ"
+        id="otherServiceDetail"
+        placeholder="กรอกรายละเอียดงานที่ต้องการ"
+        rows="5"
+    ></textarea>
+
+</div>
+
+
+            <!-- 3. รายละเอียดงานช่าง -->
+            <div id="maintenanceFields" style="display: none;">
+
+                <label>
+                    ชื่อโครงการ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ชื่อโครงการ"
+                    id="projectName"
+                    placeholder="กรอกชื่อโครงการ"
+                >
+
+
+                <label>
+                    จำนวนยูนิต <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนยูนิต"
+                    id="unitCount"
+                    placeholder="กรอกจำนวนยูนิต"
+                    min="1"
+                >
+
+
+                <label>
+    จำนวนอัตราพนักงานที่ต้องการ
+    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
+    <span class="red-star">*</span>
+</label>
+
+<input
+    type="text"
+    name="จำนวนอัตราพนักงานที่ต้องการ"
+    id="staffCount"
+    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
+    required
+>
+
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานช่าง"
+                    id="maintenanceDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+            <!-- รายละเอียดงานบริหารนิติบุคคล -->
+<div id="managementFields" style="display: none;">
+
+    <label>
+        ชื่อโครงการ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ชื่อโครงการนิติบุคคล"
+        id="managementProjectName"
+        placeholder="กรอกชื่อโครงการ"
+    >
+
+
+
+    <label>
+                    จำนวนยูนิต <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนยูนิต"
+                    id="unitCount"
+                    placeholder="กรอกจำนวนยูนิต"
+                    min="1"
+                >
+
+    <label>
+    จำนวนอัตราพนักงานที่ต้องการ
+    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
+    <span class="red-star">*</span>
+</label>
+
+<input
+    type="text"
+    name="จำนวนอัตราพนักงานนิติบุคคล"
+    id="managementStaffCount"
+    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
+    required
+>
+
+    <label>
+        รายละเอียดเพิ่มเติม
+    </label>
+
+    <textarea
+        name="รายละเอียดงานบริหารนิติบุคคล"
+        id="managementDetail"
+        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+        rows="5"
+    ></textarea>
+
+</div>
+
+<!-- รายละเอียดงานจดจัดตั้งนิติบุคคล -->
+<div id="establishmentFields" style="display: none;">
+
+    <label>
+        ชื่อโครงการ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ชื่อโครงการจดจัดตั้งนิติบุคคล"
+        id="establishmentProjectName"
+        placeholder="กรอกชื่อโครงการ"
+    >
+
+
+    <label>
+        จำนวนยูนิต <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="number"
+        name="จำนวนยูนิตจดจัดตั้งนิติบุคคล"
+        id="establishmentUnitCount"
+        placeholder="กรอกจำนวนยูนิต"
+        min="1"
+    >
+
+
+    <label>
+        รายละเอียดเพิ่มเติม
+    </label>
+
+    <textarea
+        name="รายละเอียดงานจดจัดตั้งนิติบุคคล"
+        id="establishmentDetail"
+        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+        rows="5"
+    ></textarea>
+
+</div>
+
+<!-- รายละเอียดงานจัดประชุมใหญ่ -->
+<div id="meetingFields" style="display: none;">
+
+    <label>
+        ชื่อโครงการ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ชื่อโครงการจัดประชุมใหญ่"
+        id="meetingProjectName"
+        placeholder="กรอกชื่อโครงการ"
+    >
+
+
+    <label>
+        จำนวนยูนิต <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="number"
+        name="จำนวนยูนิตจัดประชุมใหญ่"
+        id="meetingUnitCount"
+        placeholder="กรอกจำนวนยูนิต"
+        min="1"
+    >
+
+
+    <label>
+        วันที่กำหนดจัดประชุมใหญ่ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="date"
+        name="วันที่กำหนดจัดประชุมใหญ่"
+        id="meetingDate"
+    >
+
+
+    <label>
+        รายละเอียดเพิ่มเติม
+    </label>
+
+    <textarea
+        name="รายละเอียดงานจัดประชุมใหญ่"
+        id="meetingDetail"
+        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+        rows="5"
+    ></textarea>
+
+</div>
+
+<!-- รายละเอียดงานล้างเครื่องปรับอากาศ -->
+<div id="airconFields" style="display: none;">
+
+    <label>
+        ชื่อสถานที่รับบริการ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ชื่อสถานที่รับบริการ"
+        id="airconLocation"
+        placeholder="กรอกชื่อสถานที่รับบริการ"
+    >
+
+
+    <label>
+        ประเภทเครื่องปรับอากาศ <span class="red-star">*</span>
+    </label>
+
+    <select
+        name="ประเภทเครื่องปรับอากาศ"
+        id="airconType"
+    >
+
+        <option value="" selected disabled>
+            เลือกประเภทเครื่องปรับอากาศ
+        </option>
+
+        <option value="แอร์บ้าน">
+            แอร์บ้าน
+        </option>
+
+        <option value="แอร์แขวน">
+            แอร์แขวน
+        </option>
+
+        <option value="แอร์ติดผนัง">
+            แอร์ติดผนัง
+        </option>
+
+        <option value="แอร์สี่ทิศทาง">
+            แอร์สี่ทิศทาง
+        </option>
+
+        <option value="อื่น ๆ">
+    อื่น ๆ
+</option>
+
+    </select>
+<input
+    type="text"
+    name="ประเภทเครื่องปรับอากาศอื่น ๆ"
+    id="airconOtherType"
+    placeholder="ระบุประเภทเครื่องปรับอากาศ"
+    style="display: none;"
+>
+
+    <label>
+        ขนาด BTU <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ขนาด BTU"
+        id="airconBTU"
+        placeholder="กรอกขนาด BTU"
+    >
+
+
+    <label>
+        จำนวนเครื่อง <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="number"
+        name="จำนวนเครื่อง"
+        id="airconCount"
+        placeholder="กรอกจำนวนเครื่อง"
+        min="1"
+    >
+<label>
+    รายละเอียดเพิ่มเติม
+</label>
+
+<textarea
+    name="รายละเอียดงานล้างเครื่องปรับอากาศ"
+    id="airconDetail"
+    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+    rows="5"
+></textarea>
+</div>
+
+<!-- รายละเอียดงานกล้อง CCTV -->
+<div id="cctvFields" style="display: none;">
+
+    <label>
+        ชื่อสถานที่รับบริการ <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="text"
+        name="ชื่อสถานที่รับบริการ CCTV"
+        id="cctvLocation"
+        placeholder="กรอกชื่อสถานที่รับบริการ"
+    >
+
+
+    <label>
+        ประเภทงาน CCTV <span class="red-star">*</span>
+    </label>
+
+    <select
+        name="ประเภทงาน CCTV"
+        id="cctvType"
+    >
+
+        <option value="" selected disabled>
+            เลือกประเภทงาน CCTV
+        </option>
+
+        <option value="ซ่อมแซม">
+            ซ่อมแซม
+        </option>
+
+        <option value="MA">
+            MA
+        </option>
+
+        <option value="ติดตั้ง">
+            ติดตั้ง
+        </option>
+
+    </select>
+
+
+    <label>
+        จำนวนกล้อง <span class="red-star">*</span>
+    </label>
+
+    <input
+        type="number"
+        name="จำนวนกล้อง"
+        id="cctvCount"
+        placeholder="กรอกจำนวนกล้อง"
+        min="1"
+    >
+
+
+    <label>
+        รายละเอียดเพิ่มเติม
+    </label>
+
+    <textarea
+        name="รายละเอียดงาน CCTV"
+        id="cctvDetail"
+        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+        rows="5"
+    ></textarea>
+
+</div>
+
+            <!-- 4. เบอร์โทร -->
+            <label>
+                เบอร์โทร <span class="red-star">*</span>
+            </label>
+
+            <input
+                type="tel"
+                name="เบอร์โทร"
+                placeholder="กรอกเบอร์โทร"
+                pattern="[0-9]{9,10}"
+                maxlength="10"
+                inputmode="numeric"
+                title="กรุณากรอกเบอร์โทร 9-10 หลัก โดยใช้ตัวเลขเท่านั้น"
+                required
+            >
+
+
+            <!-- 5. อีเมล -->
+            <label>
+                อีเมล <span class="red-star">*</span>
+            </label>
+
+            <input
+                type="email"
+                name="อีเมล"
+                placeholder="กรอกอีเมล"
+                autocomplete="email"
+                title="กรุณากรอกอีเมลให้ถูกต้อง เช่น example@email.com"
+                required
+            >
+
+
+            <!-- 6. Line ID -->
+            <label>
+                Line ID <span class="red-star">*</span>
+            </label>
+
+            <input
+                type="text"
+                name="Line ID"
+                id="lineId"
+                placeholder="กรอก Line ID"
+                required
+            >
+
+
+            <!-- FormSubmit -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="มีลูกค้าขอใบเสนอราคาใหม่จากเว็บไซต์ SM91">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="thankyou.html">
 
+            <input
+                type="hidden"
+                name="_subject"
+                value="มีลูกค้าขอใบเสนอราคาใหม่จากเว็บไซต์ SM91"
+            >
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table"
+            >
+
+            <input
+                type="hidden"
+                name="_next"
+                value="thankyou.html"
+            >
+
+
+            <!-- ปุ่มส่ง -->
             <button type="submit">
+
                 <i class="fa-solid fa-paper-plane"></i>
+
                 ส่งคำขอใบเสนอราคา
+
             </button>
 
         </form>
 
-        <a href="index.html" class="back-home">กลับหน้าแรก</a>
+
+        <a href="index.html" class="back-home">
+            กลับหน้าแรก
+        </a>
+
     </div>
 </section>
+
+
+<!-- JavaScript สำหรับเลือกประเภทบริการ -->
+
+<script>
+
+const serviceType = document.getElementById("serviceType");
+
+const maintenanceFields =
+    document.getElementById("maintenanceFields");
+
+const projectName =
+    document.getElementById("projectName");
+
+const unitCount =
+    document.getElementById("unitCount");
+
+const staffCount =
+
+    document.getElementById("staffCount");
+    const establishmentFields =
+    document.getElementById("establishmentFields");
+
+const establishmentProjectName =
+    document.getElementById("establishmentProjectName");
+
+const establishmentUnitCount =
+    document.getElementById("establishmentUnitCount");
+
+const establishmentDetail =
+    document.getElementById("establishmentDetail");
+
+    serviceType.addEventListener("change", function () {
+
+    if (this.value === "งานจดจัดตั้งนิติบุคคล") {
+
+        establishmentFields.style.display = "block";
+
+        establishmentProjectName.required = true;
+        establishmentUnitCount.required = true;
+
+    } else {
+
+        establishmentFields.style.display = "none";
+
+        establishmentProjectName.required = false;
+        establishmentUnitCount.required = false;
+
+        establishmentProjectName.value = "";
+        establishmentUnitCount.value = "";
+        establishmentDetail.value = "";
+
+    }
+
+});
+
+    serviceType.addEventListener("change", function () {
+
+    if (this.value === "งานบริหารนิติบุคคล") {
+
+        managementFields.style.display = "block";
+
+        managementProjectName.required = true;
+        managementUnitCount.required = true;
+        managementStaffCount.required = true;
+
+    } else {
+
+        managementFields.style.display = "none";
+
+        managementProjectName.required = false;
+        managementUnitCount.required = false;
+        managementStaffCount.required = false;
+
+        managementProjectName.value = "";
+        managementUnitCount.value = "";
+        managementStaffCount.value = "";
+        managementDetail.value = "";
+
+    }
+
+});
+
+serviceType.addEventListener("change", function () {
+
+    if (
+        this.value ===
+        "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค"
+    ) {
+
+        maintenanceFields.style.display = "block";
+
+
+        projectName.required = true;
+
+        unitCount.required = true;
+
+        staffCount.required = true;
+
+
+    } else {
+
+        maintenanceFields.style.display = "none";
+
+
+        projectName.required = false;
+
+        unitCount.required = false;
+
+        staffCount.required = false;
+
+
+        projectName.value = "";
+
+        unitCount.value = "";
+
+        staffCount.value = "";
+
+        document.getElementById("maintenanceDetail").value = "";
+
+    }
+
+});
+const airconFields =
+    document.getElementById("airconFields");
+
+const airconLocation =
+    document.getElementById("airconLocation");
+
+const airconType =
+    document.getElementById("airconType");
+
+const airconBTU =
+    document.getElementById("airconBTU");
+
+const airconCount =
+    document.getElementById("airconCount");
+    const cctvFields =
+    document.getElementById("cctvFields");
+
+const cctvLocation =
+    document.getElementById("cctvLocation");
+
+const cctvType =
+    document.getElementById("cctvType");
+
+const cctvCount =
+    document.getElementById("cctvCount");
+    const otherServiceFields =
+    document.getElementById("otherServiceFields");
+
+const otherServiceDetail =
+    document.getElementById("otherServiceDetail");
+
+serviceType.addEventListener("change", function () {
+
+    if (this.value === "อื่น ๆ") {
+
+        otherServiceFields.style.display = "block";
+        otherServiceDetail.required = true;
+
+    } else {
+
+        otherServiceFields.style.display = "none";
+        otherServiceDetail.required = false;
+        otherServiceDetail.value = "";
+
+    }
+
+});
+
+
+serviceType.addEventListener("change", function () {
+
+    if (this.value === "งานกล้อง CCTV") {
+
+        cctvFields.style.display = "block";
+
+        cctvLocation.required = true;
+        cctvType.required = true;
+        cctvCount.required = true;
+
+    } else {
+
+        cctvFields.style.display = "none";
+
+        cctvLocation.required = false;
+        cctvType.required = false;
+        cctvCount.required = false;
+
+    }
+
+});
+    const airconOtherType =
+    document.getElementById("airconOtherType");
+
+airconType.addEventListener("change", function () {
+
+    if (this.value === "อื่น ๆ") {
+
+        airconOtherType.style.display = "block";
+        airconOtherType.required = true;
+
+    } else {
+
+        airconOtherType.style.display = "none";
+        airconOtherType.required = false;
+        airconOtherType.value = "";
+
+    }
+
+});
+
+
+serviceType.addEventListener("change", function () {
+
+    if (this.value === "ล้างเครื่องปรับอากาศ") {
+
+        airconFields.style.display = "block";
+
+        airconLocation.required = true;
+        airconType.required = true;
+        airconBTU.required = true;
+        airconCount.required = true;
+
+    } else {
+
+        airconFields.style.display = "none";
+
+        airconLocation.required = false;
+        airconType.required = false;
+        airconBTU.required = false;
+        airconCount.required = false;
+
+    }
+
+});
+const meetingFields =
+    document.getElementById("meetingFields");
+
+const meetingProjectName =
+    document.getElementById("meetingProjectName");
+
+const meetingUnitCount =
+    document.getElementById("meetingUnitCount");
+
+const meetingDate =
+    document.getElementById("meetingDate");
+
+
+serviceType.addEventListener("change", function () {
+
+    if (this.value === "งานจัดประชุมใหญ่") {
+
+        meetingFields.style.display = "block";
+
+        meetingProjectName.required = true;
+        meetingUnitCount.required = true;
+        meetingDate.required = true;
+
+    } else {
+
+        meetingFields.style.display = "none";
+
+        meetingProjectName.required = false;
+        meetingUnitCount.required = false;
+        meetingDate.required = false;
+
+    }
+
+});
+</script>
+
 
 </body>
 </html>
