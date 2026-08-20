@@ -67,32 +67,34 @@
                 </option>
 
                 <option value="งานกล้อง CCTV">
-    งานกล้อง CCTV
-</option>
+                    งานกล้อง CCTV
+                </option>
 
                 <option value="อื่น ๆ">
                     อื่น ๆ
                 </option>
 
             </select>
-            <!-- รายละเอียดสำหรับบริการอื่น ๆ -->
-<div id="otherServiceFields" style="display: none;">
-
-    <label>
-        รายละเอียดงาน <span class="red-star">*</span>
-    </label>
-
-    <textarea
-        name="รายละเอียดงานอื่น ๆ"
-        id="otherServiceDetail"
-        placeholder="กรอกรายละเอียดงานที่ต้องการ"
-        rows="5"
-    ></textarea>
-
-</div>
 
 
-            <!-- 3. รายละเอียดงานช่าง -->
+            <!-- งานอื่น ๆ -->
+            <div id="otherServiceFields" style="display: none;">
+
+                <label>
+                    รายละเอียดงาน <span class="red-star">*</span>
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานอื่น ๆ"
+                    id="otherServiceDetail"
+                    placeholder="กรอกรายละเอียดงานที่ต้องการ"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- งานช่าง -->
             <div id="maintenanceFields" style="display: none;">
 
                 <label>
@@ -106,7 +108,6 @@
                     placeholder="กรอกชื่อโครงการ"
                 >
 
-
                 <label>
                     จำนวนยูนิต <span class="red-star">*</span>
                 </label>
@@ -119,21 +120,18 @@
                     min="1"
                 >
 
-
                 <label>
-    จำนวนอัตราพนักงานที่ต้องการ
-    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
-    <span class="red-star">*</span>
-</label>
+                    จำนวนอัตราพนักงานที่ต้องการ
+                    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
+                    <span class="red-star">*</span>
+                </label>
 
-<input
-    type="text"
-    name="จำนวนอัตราพนักงานที่ต้องการ"
-    id="staffCount"
-    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
-    required
->
-
+                <input
+                    type="text"
+                    name="จำนวนอัตราพนักงานที่ต้องการ"
+                    id="staffCount"
+                    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
+                >
 
                 <label>
                     รายละเอียดเพิ่มเติม
@@ -148,314 +146,310 @@
 
             </div>
 
-            <!-- รายละเอียดงานบริหารนิติบุคคล -->
-<div id="managementFields" style="display: none;">
 
-    <label>
-        ชื่อโครงการ <span class="red-star">*</span>
-    </label>
+            <!-- งานบริหารนิติบุคคล -->
+            <div id="managementFields" style="display: none;">
 
-    <input
-        type="text"
-        name="ชื่อโครงการนิติบุคคล"
-        id="managementProjectName"
-        placeholder="กรอกชื่อโครงการ"
-    >
+                <label>
+                    ชื่อโครงการ <span class="red-star">*</span>
+                </label>
 
+                <input
+                    type="text"
+                    name="ชื่อโครงการนิติบุคคล"
+                    id="managementProjectName"
+                    placeholder="กรอกชื่อโครงการ"
+                >
 
-
-    <label>
+                <label>
                     จำนวนยูนิต <span class="red-star">*</span>
                 </label>
 
                 <input
                     type="number"
-                    name="จำนวนยูนิต"
-                    id="unitCount"
+                    name="จำนวนยูนิตนิติบุคคล"
+                    id="managementUnitCount"
                     placeholder="กรอกจำนวนยูนิต"
                     min="1"
                 >
 
-    <label>
-    จำนวนอัตราพนักงานที่ต้องการ
-    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
-    <span class="red-star">*</span>
-</label>
-
-<input
-    type="text"
-    name="จำนวนอัตราพนักงานนิติบุคคล"
-    id="managementStaffCount"
-    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
-    required
->
-
-    <label>
-        รายละเอียดเพิ่มเติม
-    </label>
-
-    <textarea
-        name="รายละเอียดงานบริหารนิติบุคคล"
-        id="managementDetail"
-        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
-        rows="5"
-    ></textarea>
-
-</div>
-
-<!-- รายละเอียดงานจดจัดตั้งนิติบุคคล -->
-<div id="establishmentFields" style="display: none;">
-
-    <label>
-        ชื่อโครงการ <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="text"
-        name="ชื่อโครงการจดจัดตั้งนิติบุคคล"
-        id="establishmentProjectName"
-        placeholder="กรอกชื่อโครงการ"
-    >
-
-
-    <label>
-        จำนวนยูนิต <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="number"
-        name="จำนวนยูนิตจดจัดตั้งนิติบุคคล"
-        id="establishmentUnitCount"
-        placeholder="กรอกจำนวนยูนิต"
-        min="1"
-    >
-
-
-    <label>
-        รายละเอียดเพิ่มเติม
-    </label>
-
-    <textarea
-        name="รายละเอียดงานจดจัดตั้งนิติบุคคล"
-        id="establishmentDetail"
-        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
-        rows="5"
-    ></textarea>
-
-</div>
-
-<!-- รายละเอียดงานจัดประชุมใหญ่ -->
-<div id="meetingFields" style="display: none;">
-
-    <label>
-        ชื่อโครงการ <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="text"
-        name="ชื่อโครงการจัดประชุมใหญ่"
-        id="meetingProjectName"
-        placeholder="กรอกชื่อโครงการ"
-    >
-
-
-    <label>
-        จำนวนยูนิต <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="number"
-        name="จำนวนยูนิตจัดประชุมใหญ่"
-        id="meetingUnitCount"
-        placeholder="กรอกจำนวนยูนิต"
-        min="1"
-    >
-
-
-    <label>
-        วันที่กำหนดจัดประชุมใหญ่ <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="date"
-        name="วันที่กำหนดจัดประชุมใหญ่"
-        id="meetingDate"
-    >
-
-
-    <label>
-        รายละเอียดเพิ่มเติม
-    </label>
-
-    <textarea
-        name="รายละเอียดงานจัดประชุมใหญ่"
-        id="meetingDetail"
-        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
-        rows="5"
-    ></textarea>
-
-</div>
-
-<!-- รายละเอียดงานล้างเครื่องปรับอากาศ -->
-<div id="airconFields" style="display: none;">
-
-    <label>
-        ชื่อสถานที่รับบริการ <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="text"
-        name="ชื่อสถานที่รับบริการ"
-        id="airconLocation"
-        placeholder="กรอกชื่อสถานที่รับบริการ"
-    >
-
-
-    <label>
-        ประเภทเครื่องปรับอากาศ <span class="red-star">*</span>
-    </label>
-
-    <select
-        name="ประเภทเครื่องปรับอากาศ"
-        id="airconType"
-    >
-
-        <option value="" selected disabled>
-            เลือกประเภทเครื่องปรับอากาศ
-        </option>
-
-        <option value="แอร์บ้าน">
-            แอร์บ้าน
-        </option>
-
-        <option value="แอร์แขวน">
-            แอร์แขวน
-        </option>
-
-        <option value="แอร์ติดผนัง">
-            แอร์ติดผนัง
-        </option>
-
-        <option value="แอร์สี่ทิศทาง">
-            แอร์สี่ทิศทาง
-        </option>
-
-        <option value="อื่น ๆ">
-    อื่น ๆ
-</option>
-
-    </select>
-<input
-    type="text"
-    name="ประเภทเครื่องปรับอากาศอื่น ๆ"
-    id="airconOtherType"
-    placeholder="ระบุประเภทเครื่องปรับอากาศ"
-    style="display: none;"
->
-
-    <label>
-        ขนาด BTU <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="text"
-        name="ขนาด BTU"
-        id="airconBTU"
-        placeholder="กรอกขนาด BTU"
-    >
-
-
-    <label>
-        จำนวนเครื่อง <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="number"
-        name="จำนวนเครื่อง"
-        id="airconCount"
-        placeholder="กรอกจำนวนเครื่อง"
-        min="1"
-    >
-<label>
-    รายละเอียดเพิ่มเติม
-</label>
-
-<textarea
-    name="รายละเอียดงานล้างเครื่องปรับอากาศ"
-    id="airconDetail"
-    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
-    rows="5"
-></textarea>
-</div>
-
-<!-- รายละเอียดงานกล้อง CCTV -->
-<div id="cctvFields" style="display: none;">
-
-    <label>
-        ชื่อสถานที่รับบริการ <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="text"
-        name="ชื่อสถานที่รับบริการ CCTV"
-        id="cctvLocation"
-        placeholder="กรอกชื่อสถานที่รับบริการ"
-    >
-
-
-    <label>
-        ประเภทงาน CCTV <span class="red-star">*</span>
-    </label>
-
-    <select
-        name="ประเภทงาน CCTV"
-        id="cctvType"
-    >
-
-        <option value="" selected disabled>
-            เลือกประเภทงาน CCTV
-        </option>
-
-        <option value="ซ่อมแซม">
-            ซ่อมแซม
-        </option>
-
-        <option value="MA">
-            MA
-        </option>
-
-        <option value="ติดตั้ง">
-            ติดตั้ง
-        </option>
-
-    </select>
-
-
-    <label>
-        จำนวนกล้อง <span class="red-star">*</span>
-    </label>
-
-    <input
-        type="number"
-        name="จำนวนกล้อง"
-        id="cctvCount"
-        placeholder="กรอกจำนวนกล้อง"
-        min="1"
-    >
-
-
-    <label>
-        รายละเอียดเพิ่มเติม
-    </label>
-
-    <textarea
-        name="รายละเอียดงาน CCTV"
-        id="cctvDetail"
-        placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
-        rows="5"
-    ></textarea>
-
-</div>
+                <label>
+                    จำนวนอัตราพนักงานที่ต้องการ
+                    (ระบุตำแหน่งอะไรบ้าง และตำแหน่งละกี่อัตรา)
+                    <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="จำนวนอัตราพนักงานนิติบุคคล"
+                    id="managementStaffCount"
+                    placeholder="ระบุตำแหน่งและจำนวนอัตรา"
+                >
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานบริหารนิติบุคคล"
+                    id="managementDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- งานจดจัดตั้งนิติบุคคล -->
+            <div id="establishmentFields" style="display: none;">
+
+                <label>
+                    ชื่อโครงการ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ชื่อโครงการจดจัดตั้งนิติบุคคล"
+                    id="establishmentProjectName"
+                    placeholder="กรอกชื่อโครงการ"
+                >
+
+                <label>
+                    จำนวนยูนิต <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนยูนิตจดจัดตั้งนิติบุคคล"
+                    id="establishmentUnitCount"
+                    placeholder="กรอกจำนวนยูนิต"
+                    min="1"
+                >
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานจดจัดตั้งนิติบุคคล"
+                    id="establishmentDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- งานจัดประชุมใหญ่ -->
+            <div id="meetingFields" style="display: none;">
+
+                <label>
+                    ชื่อโครงการ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ชื่อโครงการจัดประชุมใหญ่"
+                    id="meetingProjectName"
+                    placeholder="กรอกชื่อโครงการ"
+                >
+
+                <label>
+                    จำนวนยูนิต <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนยูนิตจัดประชุมใหญ่"
+                    id="meetingUnitCount"
+                    placeholder="กรอกจำนวนยูนิต"
+                    min="1"
+                >
+
+                <label>
+                    วันที่กำหนดจัดประชุมใหญ่ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    name="วันที่กำหนดจัดประชุมใหญ่"
+                    id="meetingDate"
+                >
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานจัดประชุมใหญ่"
+                    id="meetingDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- งานล้างเครื่องปรับอากาศ -->
+            <div id="airconFields" style="display: none;">
+
+                <label>
+                    ชื่อสถานที่รับบริการ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ชื่อสถานที่รับบริการ"
+                    id="airconLocation"
+                    placeholder="กรอกชื่อสถานที่รับบริการ"
+                >
+
+                <label>
+                    ประเภทเครื่องปรับอากาศ <span class="red-star">*</span>
+                </label>
+
+                <select
+                    name="ประเภทเครื่องปรับอากาศ"
+                    id="airconType"
+                >
+
+                    <option value="" selected disabled>
+                        เลือกประเภทเครื่องปรับอากาศ
+                    </option>
+
+                    <option value="แอร์บ้าน">
+                        แอร์บ้าน
+                    </option>
+
+                    <option value="แอร์แขวน">
+                        แอร์แขวน
+                    </option>
+
+                    <option value="แอร์ติดผนัง">
+                        แอร์ติดผนัง
+                    </option>
+
+                    <option value="แอร์สี่ทิศทาง">
+                        แอร์สี่ทิศทาง
+                    </option>
+
+                    <option value="อื่น ๆ">
+                        อื่น ๆ
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    name="ประเภทเครื่องปรับอากาศอื่น ๆ"
+                    id="airconOtherType"
+                    placeholder="ระบุประเภทเครื่องปรับอากาศ"
+                    style="display: none;"
+                >
+
+                <label>
+                    ขนาด BTU <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ขนาด BTU"
+                    id="airconBTU"
+                    placeholder="กรอกขนาด BTU"
+                >
+
+                <label>
+                    จำนวนเครื่อง <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนเครื่อง"
+                    id="airconCount"
+                    placeholder="กรอกจำนวนเครื่อง"
+                    min="1"
+                >
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงานล้างเครื่องปรับอากาศ"
+                    id="airconDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <!-- งานกล้อง CCTV -->
+            <div id="cctvFields" style="display: none;">
+
+                <label>
+                    ชื่อสถานที่รับบริการ <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="ชื่อสถานที่รับบริการ CCTV"
+                    id="cctvLocation"
+                    placeholder="กรอกชื่อสถานที่รับบริการ"
+                >
+
+                <label>
+                    ประเภทงาน CCTV <span class="red-star">*</span>
+                </label>
+
+                <select
+                    name="ประเภทงาน CCTV"
+                    id="cctvType"
+                >
+
+                    <option value="" selected disabled>
+                        เลือกประเภทงาน CCTV
+                    </option>
+
+                    <option value="ซ่อมแซม">
+                        ซ่อมแซม
+                    </option>
+
+                    <option value="MA">
+                        MA
+                    </option>
+
+                    <option value="ติดตั้ง">
+                        ติดตั้ง
+                    </option>
+
+                </select>
+
+                <label>
+                    จำนวนกล้อง <span class="red-star">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    name="จำนวนกล้อง"
+                    id="cctvCount"
+                    placeholder="กรอกจำนวนกล้อง"
+                    min="1"
+                >
+
+                <label>
+                    รายละเอียดเพิ่มเติม
+                </label>
+
+                <textarea
+                    name="รายละเอียดงาน CCTV"
+                    id="cctvDetail"
+                    placeholder="กรอกรายละเอียดเพิ่มเติม (ถ้ามี)"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
 
             <!-- 4. เบอร์โทร -->
             <label>
@@ -545,199 +539,145 @@
 </section>
 
 
-<!-- JavaScript สำหรับเลือกประเภทบริการ -->
-
 <script>
 
 const serviceType = document.getElementById("serviceType");
 
-const maintenanceFields =
-    document.getElementById("maintenanceFields");
+const serviceSections = {
 
-const projectName =
-    document.getElementById("projectName");
+    "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค":
+        document.getElementById("maintenanceFields"),
 
-const unitCount =
-    document.getElementById("unitCount");
+    "งานบริหารนิติบุคคล":
+        document.getElementById("managementFields"),
 
-const staffCount =
+    "งานจดจัดตั้งนิติบุคคล":
+        document.getElementById("establishmentFields"),
 
-    document.getElementById("staffCount");
-    const establishmentFields =
-    document.getElementById("establishmentFields");
+    "งานจัดประชุมใหญ่":
+        document.getElementById("meetingFields"),
 
-const establishmentProjectName =
-    document.getElementById("establishmentProjectName");
+    "ล้างเครื่องปรับอากาศ":
+        document.getElementById("airconFields"),
 
-const establishmentUnitCount =
-    document.getElementById("establishmentUnitCount");
+    "งานกล้อง CCTV":
+        document.getElementById("cctvFields"),
 
-const establishmentDetail =
-    document.getElementById("establishmentDetail");
+    "อื่น ๆ":
+        document.getElementById("otherServiceFields")
 
-    serviceType.addEventListener("change", function () {
+};
 
-    if (this.value === "งานจดจัดตั้งนิติบุคคล") {
 
-        establishmentFields.style.display = "block";
+function updateServiceFields() {
 
-        establishmentProjectName.required = true;
-        establishmentUnitCount.required = true;
+    Object.values(serviceSections).forEach(section => {
 
-    } else {
+        section.style.display = "none";
 
-        establishmentFields.style.display = "none";
+        section.querySelectorAll("input, select, textarea").forEach(field => {
 
-        establishmentProjectName.required = false;
-        establishmentUnitCount.required = false;
+            field.disabled = true;
+            field.required = false;
 
-        establishmentProjectName.value = "";
-        establishmentUnitCount.value = "";
-        establishmentDetail.value = "";
+        });
+
+    });
+
+
+    const activeSection = serviceSections[serviceType.value];
+
+    if (!activeSection) {
+        return;
+    }
+
+
+    activeSection.style.display = "block";
+
+    activeSection.querySelectorAll("input, select, textarea").forEach(field => {
+
+        field.disabled = false;
+
+    });
+
+
+    /* งานช่าง */
+    if (serviceType.value === "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค") {
+
+        document.getElementById("projectName").required = true;
+        document.getElementById("unitCount").required = true;
+        document.getElementById("staffCount").required = true;
 
     }
 
-});
 
-    serviceType.addEventListener("change", function () {
+    /* งานบริหารนิติบุคคล */
+    if (serviceType.value === "งานบริหารนิติบุคคล") {
 
-    if (this.value === "งานบริหารนิติบุคคล") {
-
-        managementFields.style.display = "block";
-
-        managementProjectName.required = true;
-        managementUnitCount.required = true;
-        managementStaffCount.required = true;
-
-    } else {
-
-        managementFields.style.display = "none";
-
-        managementProjectName.required = false;
-        managementUnitCount.required = false;
-        managementStaffCount.required = false;
-
-        managementProjectName.value = "";
-        managementUnitCount.value = "";
-        managementStaffCount.value = "";
-        managementDetail.value = "";
+        document.getElementById("managementProjectName").required = true;
+        document.getElementById("managementUnitCount").required = true;
+        document.getElementById("managementStaffCount").required = true;
 
     }
 
-});
 
-serviceType.addEventListener("change", function () {
+    /* งานจดจัดตั้งนิติบุคคล */
+    if (serviceType.value === "งานจดจัดตั้งนิติบุคคล") {
 
-    if (
-        this.value ===
-        "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค"
-    ) {
-
-        maintenanceFields.style.display = "block";
-
-
-        projectName.required = true;
-
-        unitCount.required = true;
-
-        staffCount.required = true;
-
-
-    } else {
-
-        maintenanceFields.style.display = "none";
-
-
-        projectName.required = false;
-
-        unitCount.required = false;
-
-        staffCount.required = false;
-
-
-        projectName.value = "";
-
-        unitCount.value = "";
-
-        staffCount.value = "";
-
-        document.getElementById("maintenanceDetail").value = "";
+        document.getElementById("establishmentProjectName").required = true;
+        document.getElementById("establishmentUnitCount").required = true;
 
     }
 
-});
-const airconFields =
-    document.getElementById("airconFields");
 
-const airconLocation =
-    document.getElementById("airconLocation");
+    /* งานจัดประชุมใหญ่ */
+    if (serviceType.value === "งานจัดประชุมใหญ่") {
 
-const airconType =
-    document.getElementById("airconType");
-
-const airconBTU =
-    document.getElementById("airconBTU");
-
-const airconCount =
-    document.getElementById("airconCount");
-    const cctvFields =
-    document.getElementById("cctvFields");
-
-const cctvLocation =
-    document.getElementById("cctvLocation");
-
-const cctvType =
-    document.getElementById("cctvType");
-
-const cctvCount =
-    document.getElementById("cctvCount");
-    const otherServiceFields =
-    document.getElementById("otherServiceFields");
-
-const otherServiceDetail =
-    document.getElementById("otherServiceDetail");
-
-serviceType.addEventListener("change", function () {
-
-    if (this.value === "อื่น ๆ") {
-
-        otherServiceFields.style.display = "block";
-        otherServiceDetail.required = true;
-
-    } else {
-
-        otherServiceFields.style.display = "none";
-        otherServiceDetail.required = false;
-        otherServiceDetail.value = "";
+        document.getElementById("meetingProjectName").required = true;
+        document.getElementById("meetingUnitCount").required = true;
+        document.getElementById("meetingDate").required = true;
 
     }
 
-});
 
+    /* ล้างเครื่องปรับอากาศ */
+    if (serviceType.value === "ล้างเครื่องปรับอากาศ") {
 
-serviceType.addEventListener("change", function () {
-
-    if (this.value === "งานกล้อง CCTV") {
-
-        cctvFields.style.display = "block";
-
-        cctvLocation.required = true;
-        cctvType.required = true;
-        cctvCount.required = true;
-
-    } else {
-
-        cctvFields.style.display = "none";
-
-        cctvLocation.required = false;
-        cctvType.required = false;
-        cctvCount.required = false;
+        document.getElementById("airconLocation").required = true;
+        document.getElementById("airconType").required = true;
+        document.getElementById("airconBTU").required = true;
+        document.getElementById("airconCount").required = true;
 
     }
 
-});
-    const airconOtherType =
-    document.getElementById("airconOtherType");
+
+    /* CCTV */
+    if (serviceType.value === "งานกล้อง CCTV") {
+
+        document.getElementById("cctvLocation").required = true;
+        document.getElementById("cctvType").required = true;
+        document.getElementById("cctvCount").required = true;
+
+    }
+
+
+    /* อื่น ๆ */
+    if (serviceType.value === "อื่น ๆ") {
+
+        document.getElementById("otherServiceDetail").required = true;
+
+    }
+
+}
+
+
+serviceType.addEventListener("change", updateServiceFields);
+
+
+/* ประเภทแอร์อื่น ๆ */
+
+const airconType = document.getElementById("airconType");
+const airconOtherType = document.getElementById("airconOtherType");
 
 airconType.addEventListener("change", function () {
 
@@ -757,142 +697,11 @@ airconType.addEventListener("change", function () {
 });
 
 
-serviceType.addEventListener("change", function () {
+/* เริ่มต้น */
 
-    if (this.value === "ล้างเครื่องปรับอากาศ") {
+updateServiceFields();
 
-        airconFields.style.display = "block";
-
-        airconLocation.required = true;
-        airconType.required = true;
-        airconBTU.required = true;
-        airconCount.required = true;
-
-    } else {
-
-        airconFields.style.display = "none";
-
-        airconLocation.required = false;
-        airconType.required = false;
-        airconBTU.required = false;
-        airconCount.required = false;
-
-    }
-
-});
-const meetingFields =
-    document.getElementById("meetingFields");
-
-const meetingProjectName =
-    document.getElementById("meetingProjectName");
-
-const meetingUnitCount =
-    document.getElementById("meetingUnitCount");
-
-const meetingDate =
-    document.getElementById("meetingDate");
-
-
-serviceType.addEventListener("change", function () {
-
-    if (this.value === "งานจัดประชุมใหญ่") {
-
-        meetingFields.style.display = "block";
-
-        meetingProjectName.required = true;
-        meetingUnitCount.required = true;
-        meetingDate.required = true;
-
-    } else {
-
-        meetingFields.style.display = "none";
-
-        meetingProjectName.required = false;
-        meetingUnitCount.required = false;
-        meetingDate.required = false;
-
-    }
-
-});
 </script>
-// ส่งเฉพาะข้อมูลของประเภทบริการที่เลือก
-const serviceSections = [
-    maintenanceFields,
-    managementFields,
-    establishmentFields,
-    meetingFields,
-    airconFields,
-    cctvFields,
-    otherServiceFields
-];
-
-function updateFormFields() {
-
-    // ปิดการส่งข้อมูลของทุกประเภทก่อน
-    serviceSections.forEach(section => {
-
-        if (section) {
-
-            section.querySelectorAll("input, select, textarea").forEach(field => {
-                field.disabled = true;
-            });
-
-        }
-
-    });
-
-
-    // เปิดการส่งข้อมูลเฉพาะประเภทที่เลือก
-    let activeSection = null;
-
-    switch (serviceType.value) {
-
-        case "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค":
-            activeSection = maintenanceFields;
-            break;
-
-        case "งานบริหารนิติบุคคล":
-            activeSection = managementFields;
-            break;
-
-        case "งานจดจัดตั้งนิติบุคคล":
-            activeSection = establishmentFields;
-            break;
-
-        case "งานจัดประชุมใหญ่":
-            activeSection = meetingFields;
-            break;
-
-        case "ล้างเครื่องปรับอากาศ":
-            activeSection = airconFields;
-            break;
-
-        case "งานกล้อง CCTV":
-            activeSection = cctvFields;
-            break;
-
-        case "อื่น ๆ":
-            activeSection = otherServiceFields;
-            break;
-    }
-
-
-    if (activeSection) {
-
-        activeSection.querySelectorAll("input, select, textarea").forEach(field => {
-            field.disabled = false;
-        });
-
-    }
-
-}
-
-
-// ทำงานทุกครั้งที่เปลี่ยนประเภทบริการ
-serviceType.addEventListener("change", updateFormFields);
-
-// เริ่มต้นให้ปิดข้อมูลของบริการที่ไม่ได้เลือก
-updateFormFields();
 
 
 </body>
