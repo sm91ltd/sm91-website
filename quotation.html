@@ -815,6 +815,84 @@ serviceType.addEventListener("change", function () {
 
 });
 </script>
+// ส่งเฉพาะข้อมูลของประเภทบริการที่เลือก
+const serviceSections = [
+    maintenanceFields,
+    managementFields,
+    establishmentFields,
+    meetingFields,
+    airconFields,
+    cctvFields,
+    otherServiceFields
+];
+
+function updateFormFields() {
+
+    // ปิดการส่งข้อมูลของทุกประเภทก่อน
+    serviceSections.forEach(section => {
+
+        if (section) {
+
+            section.querySelectorAll("input, select, textarea").forEach(field => {
+                field.disabled = true;
+            });
+
+        }
+
+    });
+
+
+    // เปิดการส่งข้อมูลเฉพาะประเภทที่เลือก
+    let activeSection = null;
+
+    switch (serviceType.value) {
+
+        case "งานช่างซ่อมบำรุงและดูแลระบบสาธารณูปโภค":
+            activeSection = maintenanceFields;
+            break;
+
+        case "งานบริหารนิติบุคคล":
+            activeSection = managementFields;
+            break;
+
+        case "งานจดจัดตั้งนิติบุคคล":
+            activeSection = establishmentFields;
+            break;
+
+        case "งานจัดประชุมใหญ่":
+            activeSection = meetingFields;
+            break;
+
+        case "ล้างเครื่องปรับอากาศ":
+            activeSection = airconFields;
+            break;
+
+        case "งานกล้อง CCTV":
+            activeSection = cctvFields;
+            break;
+
+        case "อื่น ๆ":
+            activeSection = otherServiceFields;
+            break;
+    }
+
+
+    if (activeSection) {
+
+        activeSection.querySelectorAll("input, select, textarea").forEach(field => {
+            field.disabled = false;
+        });
+
+    }
+
+}
+
+
+// ทำงานทุกครั้งที่เปลี่ยนประเภทบริการ
+serviceType.addEventListener("change", updateFormFields);
+
+// เริ่มต้นให้ปิดข้อมูลของบริการที่ไม่ได้เลือก
+updateFormFields();
 
 
 </body>
